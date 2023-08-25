@@ -11,10 +11,7 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
-
-Route::get('/', function () {
-    
+*/    
     class Task
     {
         public int $id;
@@ -82,7 +79,7 @@ Route::get('/', function () {
             '2023-03-04 12:00:00'
         ),
     ];
-});
+
 
     Route::get('/', function () use ($tasks) {
         return view('index', [
