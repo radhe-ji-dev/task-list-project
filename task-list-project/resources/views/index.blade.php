@@ -1,18 +1,17 @@
+<!-- resources/views/show.blade.php -->
 
-<!-- resources/views/index.blade.php -->
-<h1>The list of tasks</h1>
+@extends('layouts.app')
 
-<div>
-    Hello, I'm a Blade template!
+@section('title', 'The list of tasks')
+
+@section('content')
     @forelse ($tasks as $task)
         <div>
-            <a href="{{ route('tasks.show', ['id' => $task->id]) }}">{{ $task->title }}</a>
+            <!-- Display task information here -->
+            <h2>{{ $task->title }}</h2>
+            <p>{{ $task->description }}</p>
         </div>
     @empty
         <div>There are no tasks!</div>
     @endforelse
-</div>
-
-@isset($name)
-    <div>The name is: {{ $name }}</div>
-@endisset
+@endsection
